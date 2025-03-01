@@ -30,12 +30,26 @@ let findLongestWord = (text) =>
     // \s representa espacios y el + significa 'uno o más'
     //entonces cuando hallé un espacio o más es cuando separará las palabras en subarreglos
 
-    
-    
+    let longestWord = ''; //Aquí asignaremos la palabra más larga
+    let maximumLength = 0; //variable que guarda la longitud de la variable más larga
+    //empezaremos con 0
 
-    return longestWord;
+    for(let i = 0; i < words.length; i++){
+        const currentWord = words[i];
+        const currentLength = currentWord.length;
+
+        if(currentLength > maximumLength){
+            maximumLength = currentLength;
+            longestWord = currentWord;
+        }
+    }
+    
+    return {
+        word: longestWord, 
+        length: maximumLength
+    };
+
 }
 
-console.log(findLongestWord(
-    "Bali and Lombok are neighbouring islands; both are part of the Indonesian archipelago. "
-));
+const paragraph = "I’d pen meandering paragraphs interspersed with interesting words and thought-provoking aperçus.";
+console.log(    findLongestWord(paragraph)  );
