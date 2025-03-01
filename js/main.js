@@ -20,18 +20,19 @@ Estás desarrollando una herramienta para ayudar a escritores a identificar la p
  */
 
 //Arrow Function
-let findLongestWord = (string) => 
+let findLongestWord = (text) => 
 {
-    let longestWord = '';//variable String de la palabra más larga
-    let longest = 0;// tamaño de la palabra mas larga (la cantidad de letras)
-    let word = string.split(" ");// la palabra se separara con el split
+    // quitando los espacios, caracteres y poniendolo en minuscula
+    const onlyWord = text.replace(/[^\w\s]/g, '').toLowerCase();
+    
+    // separando el texto en subarrays de palabras, dentro del paréntesis esta el separador
+    const words = onlyWord.split(/\s+/);
+    // \s representa espacios y el + significa 'uno o más'
+    //entonces cuando hallé un espacio o más es cuando separará las palabras en subarreglos
 
-    for(let i = 0; i < word.length; i++){
-        if(longest < word.length){
-            longest = word[i].length;
-            longestWord = word[i]; // asignando la palabra más larga a la variable
-        }
-    }
+    
+    
+
     return longestWord;
 }
 
